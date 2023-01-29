@@ -4,31 +4,41 @@ import * as SVG from "~/svgs";
 
 ## Your growth group leaders!
 
+export const profiles = [{
+	name: "Jaison",
+	imageSrc: "/jaison.jpeg",
+	svg: <SVG.Jaison className="h-full w-full" />,
+	description: `Jaison was born in India but grew up in Sydney. He grew up in a Christian family but only became a Christian himself when he discovered the Bible’s radical message about the grace of God while listening to a sermon during his lunch break at work. Jaison now loves seeing others from all different backgrounds and age-groups learning about this same grace shown to sinners in the death and resurrection of Christ. He enjoys having a good cold brew coffee with friends and loves watching Marvel movies.
+
+    		Jaison oversees the Engage Youth Ministry, pastors the 5pm congregation and leads the Explore Evangelistic Ministry.`
+
+}, {
+name: "Chi Chi",
+imageSrc: "/chichi.jpeg",
+svg: <SVG.ChiChi className="h-full w-full" />,
+description: `Consectetur sunt minima nemo nulla obcaecati Molestiae eligendi eligendi blanditiis ipsa minima, quas blanditiis Deleniti non eius animi exercitationem sint Quaerat distinctio eaque consequatur nam illo Atque unde adipisci repellendus.`
+}, {
+name: "Kevin",
+imageSrc: "/kevin.jpeg",
+svg: <SVG.Kevin className="h-full w-full" />,
+description: `Kevin is a handsome young man`
+}]
+
 <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 mt-8">
-  <div className="h-full w-full flex flex-col gap-2">
-    <Avatar className="h-fit w-full aspect-square overflow-hidden relative">
-      <Image objectFit="cover" fill src="/jaison.jpeg" />
-    </Avatar>
-    <p className="text-center font-bold text-5xl mt-2 mb-4">Jaison</p>
-		<p className="text-center">
-    	Jaison was born in India but grew up in Sydney. He grew up in a Christian family but only became a Christian himself when he discovered the Bible’s radical message about the grace of God while listening to a sermon during his lunch break at work. Jaison now loves seeing others from all different backgrounds and age-groups learning about this same grace shown to sinners in the death and resurrection of Christ. He enjoys having a good cold brew coffee with friends and loves watching Marvel movies.
-
-Jaison oversees the Engage Youth Ministry, pastors the 5pm congregation and leads the Explore Evangelistic Ministry.
-
-</p>
-
-  </div>
-  <div className="h-full w-full flex flex-col gap-2">
-    <Avatar className="h-fit w-full aspect-square overflow-hidden relative">
-      <Image objectFit="cover" fill src="/kevin.jpeg" />
-    </Avatar>
-    <p className="text-center font-bold text-5xl mt-2 mb-4">Kevin</p>
-
-    	<p className="text-center">
-    	Ipsum praesentium consequatur possimus reprehenderit fugiat Mollitia quis quo ut beatae possimus Animi autem numquam magnam placeat labore? Voluptatum eligendi non aliquam accusantium deserunt Consequatur facere quasi repellendus illum modi.
-
-    		Dolor veniam expedita odio mollitia perspiciatis Ab aperiam ad facere aut eligendi! Molestias nemo aperiam architecto optio perspiciatis Vel ad cumque culpa maiores autem numquam Doloribus aperiam molestias deleniti ut soluta suscipit Incidunt soluta praesentium illum quis saepe veniam! Aut maxime aut voluptatem corrupti corrupti mollitia perspiciatis aut! Assumenda odit!
-    	</p>
-
-  </div>
+  {profiles.map(({ imageSrc, svg, name, description }) => (
+    <div key={name} className="h-full w-full flex flex-col gap-2">
+      <Avatar className="group h-fit w-full aspect-square overflow-hidden relative">
+        <Image
+          objectFit="cover"
+          fill
+          alt={`Image of ${name}`}
+          src={imageSrc}
+          className="group-hover:visible invisible"
+        />
+        <div className="group-hover:invisible w-full h-full">{svg}</div>
+      </Avatar>
+      <p className="text-center font-bold text-5xl mt-2 mb-4">{name}</p>
+      <p className="text-center">{description}</p>
+    </div>
+  ))}
 </div>

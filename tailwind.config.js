@@ -6,5 +6,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("windy-radix-palette")],
+  plugins: [require("windy-radix-palette"), require("tailwindcss-animate")],
 };

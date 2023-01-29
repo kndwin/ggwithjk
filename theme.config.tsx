@@ -14,10 +14,13 @@ const config: DocsThemeConfig = {
           <SVG.Jaison className="w-full h-full" />
         </div>
         <div className={classes.avatar()}>
+          <SVG.ChiChi className="w-full h-full" />
+        </div>
+        <div className={classes.avatar()}>
           <SVG.Kevin className="w-full h-full" />
         </div>
       </div>
-      <p className="font-bold">GG with Jaison & Kevin - 2023</p>
+      <p className="font-bold">GG with Jaison, Chi Chi & Kevin - 2023</p>
     </div>
   ),
   primaryHue: 23,
