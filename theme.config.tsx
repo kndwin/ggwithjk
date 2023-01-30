@@ -8,24 +8,43 @@ const classes = {
 
 const config: DocsThemeConfig = {
   logo: (
-    <div className="flex gap-2 items-center">
-      <div className="flex -space-x-1 items-center">
-        <div className={classes.avatar()}>
-          <SVG.Jaison className="w-full h-full" />
-        </div>
-        <div className={classes.avatar()}>
-          <SVG.ChiChi className="w-full h-full" />
-        </div>
-        <div className={classes.avatar()}>
-          <SVG.Kevin className="w-full h-full" />
-        </div>
+    <div className="flex -space-x-1 items-center">
+      <div className={classes.avatar()}>
+        <SVG.Jaison className="w-full h-full" />
       </div>
-      <p className="font-bold">GG with Jaison, Chi Chi & Kevin - 2023</p>
+      <div className={classes.avatar()}>
+        <SVG.ChiChi className="w-full h-full" />
+      </div>
+      <div className={classes.avatar()}>
+        <SVG.Kevin className="w-full h-full" />
+      </div>
     </div>
   ),
   primaryHue: 23,
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:title" content="GG with Jaison, Chi Chi and Kevin" />
+      <meta
+        property="og:description"
+        content="Growth group with Jaison, Chi Chi and Kevin in 2023"
+      />
+    </>
+  ),
+  useNextSeoProps: () => {
+    return {
+      titleTemplate: "%s",
+    };
+  },
+  editLink: {
+    component: () => <></>,
+  },
+  feedback: {
+    content: () => <></>,
+    labels: "",
+  },
   chat: {
-    link: "https://discord.com",
+    icon: <></>,
   },
   docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
   footer: {
